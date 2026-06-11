@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Translator's Grimoire | 翻訳者の魔法書</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Corner map decorations -->
+  <svg class="map-corner tl" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
+    <path d="M2 2 L40 2 L2 40 Z" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
+    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
+    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
+    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
+  </svg>
+  <svg class="map-corner tr" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
+    <path d="M2 2 L40 2 L2 40 Z" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
+    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
+    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
+    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
+  </svg>
+  <svg class="map-corner bl" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
+    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
+    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
+    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
+  </svg>
+  <svg class="map-corner br" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
+    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
+    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
+    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
+  </svg>
+
+  <header>
+    <p class="site-title">The Translator's Grimoire</p>
+    <p class="site-subtitle">〜 翻訳者の魔法書 〜</p>
+    <div class="header-rule">✦ ✦ ✦</div>
+  </header>
+
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="translation.html">Translation Log</a>
+    <a href="blog.html">Journal</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <main>
+    <h1 class="page-heading">Welcome to the Grimoire</h1>
+    <p class="page-divider">✦ ✦ ✦</p>
+
+    <div class="panel">
+      <p class="panel-title">✦ このサイトについて</p>
+      <p class="about-intro">
+        ここは日本語翻訳の学習記録を残すための場所です。<br>
+        英語のテキストを日本語に訳しながら、言葉の細部に向き合っていきます。<br>
+        翻訳メモ、ギャラリー、日記、そして絵に起こした翻訳漫画をまとめています。
+      </p>
+      <div class="ornament">· · ✦ · ·</div>
+      <p style="font-style:italic; font-size:0.9rem; color:var(--parchment-2); text-align:center;">
+        "One must always be careful of books, and what is inside them,<br>for words have the power to change us."
+      </p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem;">
+      <a href="translation.html" style="text-decoration:none;">
+        <div class="panel" style="text-align:center; transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(200,169,110,0.5)'" onmouseout="this.style.borderColor='rgba(200,169,110,0.2)'">
+          <p style="font-size:1.8rem; margin-bottom:0.5rem;">📜</p>
+          <p class="panel-title" style="border:none; text-align:center;">Translation Log</p>
+          <p style="font-size:0.82rem; color:var(--parchment-2);">翻訳の解説・メモ</p>
+        </div>
+      </a>
+      <a href="blog.html" style="text-decoration:none;">
+        <div class="panel" style="text-align:center; transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(200,169,110,0.5)'" onmouseout="this.style.borderColor='rgba(200,169,110,0.2)'">
+          <p style="font-size:1.8rem; margin-bottom:0.5rem;">🪶</p>
+          <p class="panel-title" style="border:none; text-align:center;">Journal</p>
+          <p style="font-size:0.82rem; color:var(--parchment-2);">翻訳日記</p>
+        </div>
+      </a>
+      <a href="gallery.html" style="text-decoration:none;">
+        <div class="panel" style="text-align:center; transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(200,169,110,0.5)'" onmouseout="this.style.borderColor='rgba(200,169,110,0.2)'">
+          <p style="font-size:1.8rem; margin-bottom:0.5rem;">🖼</p>
+          <p class="panel-title" style="border:none; text-align:center;">Gallery</p>
+          <p style="font-size:0.82rem; color:var(--parchment-2);">翻訳全文・翻訳漫画</p>
+        </div>
+      </a>
+      <a href="about.html" style="text-decoration:none;">
+        <div class="panel" style="text-align:center; transition:border-color 0.3s;" onmouseover="this.style.borderColor='rgba(200,169,110,0.5)'" onmouseout="this.style.borderColor='rgba(200,169,110,0.2)'">
+          <p style="font-size:1.8rem; margin-bottom:0.5rem;">🗝</p>
+          <p class="panel-title" style="border:none; text-align:center;">About</p>
+          <p style="font-size:0.82rem; color:var(--parchment-2);">このサイトについて</p>
+        </div>
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2025 The Translator's Grimoire &nbsp;✦&nbsp; All rights reserved
+  </footer>
+
+</body>
+</html>
