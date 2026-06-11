@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&family=Noto+Serif+JP:wght@300;400;600&display=swap');
+
+/* ── Reset & Base ───────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --parchment:   #F5E6C8;
+  --parchment-2: #EDD9A3;
+  --ink:         #2C1A0E;
+  --ink-deep:    #1A0F07;
+  --gold:        #C8A96E;
+  --gold-dark:   #8B6914;
+  --rust:        #8B4513;
+  --sepia-mid:   #6B4423;
+  --fade:        rgba(200, 169, 110, 0.15);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--ink-deep);
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(139,69,19,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(200,169,110,0.06) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--parchment);
+  font-family: 'IM Fell English', 'Noto Serif JP', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+/* ── Parchment texture overlay ───────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 28px,
+      rgba(200,169,110,0.03) 28px,
+      rgba(200,169,110,0.03) 29px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Map corner decorations ──────────────────── */
+.map-corner {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 1;
+}
+.map-corner.tl { top: 0; left: 0; }
+.map-corner.tr { top: 0; right: 0; transform: scaleX(-1); }
+.map-corner.bl { bottom: 0; left: 0; transform: scaleY(-1); }
+.map-corner.br { bottom: 0; right: 0; transform: scale(-1); }
+
+/* ── Header ──────────────────────────────────── */
+header {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  border-bottom: 1px solid rgba(200,169,110,0.3);
+}
+
+.site-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.4rem, 4vw, 2.6rem);
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 30px rgba(200,169,110,0.4), 2px 2px 0 rgba(26,15,7,0.8);
+  margin-bottom: 0.3rem;
+}
+
+.site-subtitle {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-2);
+  font-size: 0.95rem;
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+}
+
+.header-rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.2rem auto 0;
+  max-width: 500px;
+  color: var(--gold);
+  opacity: 0.5;
+  font-size: 1.1rem;
+}
+.header-rule::before,
+.header-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+/* ── Navigation ──────────────────────────────── */
+nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem;
+  background: rgba(26,15,7,0.6);
+  border-bottom: 1px solid rgba(200,169,110,0.2);
+}
+
+nav a {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--parchment-2);
+  text-decoration: none;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav a::before {
+  content: '✦';
+  position: absolute;
+  left: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.5rem;
+  color: var(--gold);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--gold);
+  border-color: rgba(200,169,110,0.3);
+  background: rgba(200,169,110,0.07);
+  text-shadow: 0 0 12px rgba(200,169,110,0.5);
+}
+nav a:hover::before,
+nav a.active::before { opacity: 1; }
+
+/* ── Main content ────────────────────────────── */
+main {
+  position: relative;
+  z-index: 5;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+/* ── Page title ──────────────────────────────── */
+.page-heading {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.1rem, 3vw, 1.8rem);
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.08em;
+}
+
+.page-divider {
+  text-align: center;
+  color: var(--gold);
+  opacity: 0.4;
+  margin: 0.5rem 0 2.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+}
+
+/* ── Cards / Panels ──────────────────────────── */
+.panel {
+  background: rgba(44,26,14,0.6);
+  border: 1px solid rgba(200,169,110,0.2);
+  border-radius: 2px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 1.8rem;
+  position: relative;
+}
+
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(200,169,110,0.08);
+  pointer-events: none;
+}
+
+.panel-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.85rem;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(200,169,110,0.2);
+}
+
+/* ── Blog entries ────────────────────────────── */
+.blog-entry {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 0 1.5rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(200,169,110,0.1);
+  align-items: baseline;
+}
+
+.blog-entry:last-child { border-bottom: none; }
+
+.blog-date {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--gold);
+  opacity: 0.75;
+  white-space: nowrap;
+}
+
+.blog-text {
+  font-size: 0.92rem;
+  color: var(--parchment);
+  line-height: 1.7;
+}
+
+/* ── Translation log ─────────────────────────── */
+.trans-entry {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid rgba(200,169,110,0.12);
+}
+.trans-entry:last-child { border-bottom: none; }
+
+.trans-meta {
+  font-size: 0.78rem;
+  color: var(--gold);
+  opacity: 0.7;
+  margin-bottom: 0.4rem;
+  font-style: italic;
+}
+
+.trans-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.95rem;
+  color: var(--parchment-2);
+  margin-bottom: 0.6rem;
+}
+
+.trans-body {
+  font-size: 0.92rem;
+  color: var(--parchment);
+  line-height: 1.85;
+}
+
+.trans-body .original {
+  color: var(--parchment-2);
+  font-style: italic;
+  margin-bottom: 0.3rem;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(200,169,110,0.3);
+}
+
+.trans-body .translated {
+  padding-left: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.trans-body .note {
+  font-size: 0.85rem;
+  color: var(--gold);
+  opacity: 0.8;
+  background: rgba(200,169,110,0.06);
+  padding: 0.5rem 0.8rem;
+  border-left: 2px solid var(--gold-dark);
+  margin-top: 0.5rem;
+}
+
+/* ── Gallery ─────────────────────────────────── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.gallery-item {
+  background: rgba(26,15,7,0.7);
+  border: 1px solid rgba(200,169,110,0.2);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.gallery-item:hover {
+  border-color: rgba(200,169,110,0.5);
+  transform: translateY(-2px);
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  filter: sepia(20%) brightness(0.9);
+  transition: filter 0.3s;
+}
+
+.gallery-item:hover img {
+  filter: sepia(10%) brightness(1);
+}
+
+.gallery-caption {
+  padding: 0.7rem 0.9rem;
+  font-size: 0.8rem;
+  color: var(--parchment-2);
+  font-style: italic;
+  border-top: 1px solid rgba(200,169,110,0.15);
+}
+
+/* ── Text passage (gallery full text) ───────── */
+.passage {
+  background: rgba(26,15,7,0.5);
+  border: 1px solid rgba(200,169,110,0.15);
+  border-radius: 2px;
+  padding: 1.5rem 1.8rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.92rem;
+  line-height: 2;
+}
+
+.passage-header {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.82rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(200,169,110,0.2);
+}
+
+/* ── About page ──────────────────────────────── */
+.about-intro {
+  font-size: 1rem;
+  line-height: 2;
+  color: var(--parchment);
+  margin-bottom: 2rem;
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 2.5rem;
+}
+
+.link-card {
+  display: block;
+  text-decoration: none;
+  background: rgba(26,15,7,0.6);
+  border: 1px solid rgba(200,169,110,0.2);
+  padding: 0.9rem 1.1rem;
+  text-align: center;
+  transition: all 0.3s;
+  color: var(--parchment-2);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.link-card:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(200,169,110,0.08);
+}
+
+.link-card .link-icon {
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* ── Contact form ────────────────────────────── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-field label {
+  font-size: 0.78rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.form-field input,
+.form-field textarea {
+  background: rgba(26,15,7,0.7);
+  border: 1px solid rgba(200,169,110,0.25);
+  color: var(--parchment);
+  padding: 0.6rem 0.9rem;
+  font-family: 'IM Fell English', 'Noto Serif JP', serif;
+  font-size: 0.9rem;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: rgba(200,169,110,0.6);
+}
+
+.form-submit {
+  background: transparent;
+  border: 1px solid rgba(200,169,110,0.4);
+  color: var(--gold);
+  padding: 0.7rem 2rem;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: all 0.3s;
+  align-self: flex-start;
+}
+
+.form-submit:hover {
+  background: rgba(200,169,110,0.12);
+  border-color: var(--gold);
+}
+
+/* ── Footer ──────────────────────────────────── */
+footer {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(200,169,110,0.2);
+  font-size: 0.78rem;
+  color: var(--gold);
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+  font-style: italic;
+}
+
+/* ── Section label ───────────────────────────── */
+.section-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  opacity: 0.6;
+  text-transform: uppercase;
+  font-family: 'Cinzel Decorative', serif;
+  margin-bottom: 0.3rem;
+}
+
+/* ── Tag ─────────────────────────────────────── */
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid rgba(200,169,110,0.3);
+  color: var(--gold);
+  margin-right: 0.3rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── Ornament divider ────────────────────────── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  opacity: 0.35;
+  margin: 2rem 0;
+  letter-spacing: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 600px) {
+  main { padding: 2rem 1.2rem 4rem; }
+  .blog-entry { grid-template-columns: 1fr; gap: 0.2rem; }
+  .blog-date { font-size: 0.75rem; }
+  nav a { font-size: 0.65rem; padding: 0.4rem 0.7rem; }
+}
