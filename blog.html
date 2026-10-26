@@ -4,137 +4,182 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Journal | The Translator's Grimoire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .post {
+      background: rgba(255,255,255,0.85);
+      border-radius: 14px;
+      border: 1px solid var(--sepia-light);
+      padding: 1rem 1.2rem;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: transform .15s, box-shadow .15s;
+      margin-bottom: 10px;
+    }
+    .post:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(92,64,51,.1); }
+    .post-date {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      background: var(--blue-light);
+      border-radius: 8px;
+      padding: 3px 9px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+      line-height: 1.6;
+      font-family: var(--font);
+    }
+    .post-text { font-size: 13.5px; color: var(--text-sub); line-height: 1.85; }
+  </style>
 </head>
 <body>
 
-  <svg class="map-corner tl" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
-    <path d="M2 2 L40 2 L2 40 Z" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
-    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-  </svg>
-  <svg class="map-corner tr" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
-    <path d="M2 2 L40 2 L2 40 Z" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
-    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-  </svg>
-  <svg class="map-corner bl" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
-    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
-    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-  </svg>
-  <svg class="map-corner br" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
-    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
-    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-  </svg>
+<header>
+  <a class="logo" href="index.html">📜 The Translator's Grimoire <span class="logo-sub">翻訳学習サイト</span></a>
+  <nav><ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="ranking.html">Ranking</a></li>
+    <li><a href="blog.html" class="active">Journal</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul></nav>
+</header>
 
-  <header>
-    <p class="site-title">The Translator's Grimoire</p>
-    <p class="site-subtitle">〜 翻訳者の魔法書 〜</p>
-    <div class="header-rule">✦ ✦ ✦</div>
-  </header>
+<main>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="ranking.html">Translation Log</a>
-    <a href="blog.html" class="active">Journal</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="about.html">About</a>
-  </nav>
+  <div class="page-hero">
+    <div class="page-title">Journal</div>
+    <div class="page-subtitle">翻訳日記 &amp; 洋書よみよみ日記</div>
+    <div class="hero-divider">
+      <div class="hero-divider-line"></div>
+      <span class="hero-divider-icon">✦ ✦ ✦</span>
+      <div class="hero-divider-line"></div>
+    </div>
+  </div>
 
-  <main>
-    <h1 class="page-heading">Journal</h1>
-    <p class="page-divider">✦ ✦ ✦</p>
+  <div class="card">
+    <h2>🪶 日記</h2>
 
-    <div class="panel">
-      <p class="panel-title">🪶 翻訳日記</p>
-
-      <div class="blog-entry">
-        <span class="blog-date">2026.10.19</span>
-        <span class="blog-text">ある記事で「訳者の小磯洋光（こいそ・ひろみつ）が
-          アン・カーソンの代表作『赤の自伝』を日本で出そうとした際、
-          難解な海外現代詩・ヴァース・ノベルということもあって大手の出版社には断られ続け、
-          最終的に福岡の独立系小出版社である書肆侃侃房（しょしかんかんぼう）がその熱意を汲んで
-          2022年に出版したというエピソードがあります。」ってあって、まじで感動してしまった。
-          それってすごいことだよね。その小さな出版社が見る目があっただけじゃなくて、
-          どうしても翻訳したかったっていう小磯洋光氏の熱意もすごい。
-          翻訳のほうを読んでみようと思った。</span>
-      </div>
-
-      <div class="blog-entry">
-        <span class="blog-date">2026.09.23</span>
-        <span class="blog-text">翻訳文を読んでるときにちょっとつっかえる感じなんなんだろう。日本語って言語化されてないお決まりのフレーズってあるのかな？
-        この言葉が来たら、そのあとにこの言葉が来るって脳が勝手に準備するのかも……？</span>
-      </div>
-
-      <div class="blog-entry">
-        <span class="blog-date">2026.09.21</span>
-        <span class="blog-text">村上春樹って翻訳家とか小説家とかじゃなくて「芸術家」とか「アーティスト」って言った方が正しいのかもしれない。</span>
-      </div>
-
-      <div class="blog-entry">
-        <span class="blog-date">2026.09.19</span>
-        <span class="blog-text">師匠に勧められて村上春樹の華麗なるギャッツビー読んだんだけど、文章のクセが強い。読みにくい。個人的に好みじゃないかも……。
-        このクセの強さが通用するのは村上春樹だからだと思う。一介の人間がこれやったって評価されないよ。</span>
-      </div>
-
-      <div class="blog-entry">
-        <span class="blog-date">2026.09.18</span>
-        <span class="blog-text">もう、いっそのこと師匠の言うこと全部無視して自分の良いと思うことを思いっきりやったほうが逆に良いのかもしれない。</span>
-      </div>
-
-      <div class="blog-entry">
-        <span class="blog-date">2026.09.17</span>
-        <span class="blog-text">英文そのままで訳してって言われたから師匠に辞書の言葉まんまで翻訳して提出したら逆に雑だって言われた……さじ加減が難しい。
-        どうすればいいんだ……。文系ってやっぱり、答えがないから難しいよね。</span>
-      </div>
-
-      <div class="blog-entry">
-        <span class="blog-date">2026.08.30</span>
-        <span class="blog-text">私がしなきゃいけないのは翻訳文を分かりやすくすることでも読みやすくすることでもなくて
-          英語文のまま訳すことだ。</span>
-      </div>
-
-      <div class="blog-entry">
-        <span class="blog-date">2026.07.08</span>
-        <span class="blog-text">コラムの翻訳が劇的にできない。物語がほしい。
-          でも、翻訳家になるならコラムは避けて通れない。</span>
-      </div>
-
-      <div class="blog-entry">
-        <span class="blog-date">2026.07.01</span>
-        <span class="blog-text">「beacon」は高台地って訳せるけど灯台とか航路標識の可能性もあって、それは
-          ちゃんと検索して写真を見て確認しないと分からない。</span>
-      </div>
-
-      <div class="blog-entry">
-        <span class="blog-date">2026.06.25</span>
-        <span class="blog-text">師匠に、「英語はちゃんと読めてるんだけど（先生のニュアンス的に「英語では上手く想像できてる」みたいな）、
-          ここぞってときに日本語に上手く変換できてないときがある」って言われた。
-        それは正しい。日本語は読みやすさを追求しすぎて口語になってしまったり意訳してしまう。
-        「読みやすさ」と「正しさ」のバランスが上手く取れてない。
-        自覚はあるけど、それを直すのが大変なんだよね。</span>
-      </div>
-
-      <div class="blog-entry">
-        <span class="blog-date">2026.06.18</span>
-        <span class="blog-text">まずはこのサイトではThe Machine Stops訳してみようかな。「AIのある現代を上手く表せてる」って話題になってたから。</span>
-      </div>
-
+    <div class="post">
+      <div class="post-date">2026/10/20</div>
+      <div class="post-text">ある記事で「訳者の小磯洋光（こいそ・ひろみつ）がアン・カーソンの代表作『赤の自伝』を日本で出そうとした際、難解な海外現代詩・ヴァース・ノベルということもあって大手の出版社には断られ続け、最終的に福岡の独立系小出版社である書肆侃侃房（しょしかんかんぼう）がその熱意を汲んで2022年に出版したというエピソードがあります。」ってあって、まじで感動してしまった。それってすごいことだよね。その小さな出版社が見る目があっただけじゃなくて、どうしても翻訳したかったっていう小磯洋光氏の熱意もすごい。翻訳のほうを読んでみようと思った。</div>
     </div>
 
-  </main>
+    <div class="post">
+      <div class="post-date">2026/10/07</div>
+      <div class="post-text">ある翻訳家の人に弟子入りしたんだけど、課題としてだしてくる英文が難しすぎて洋書を読むのが楽になった。しばらく課題が大変で洋書読めなかったんだけど、そろそろ積読を消化していこうと思う。</div>
+    </div>
 
-  <footer>
-    &copy; 2025 The Translator's Grimoire &nbsp;✦&nbsp; All rights reserved
-  </footer>
+    <div class="post">
+      <div class="post-date">2026/09/23</div>
+      <div class="post-text">翻訳文を読んでるときにちょっとつっかえる感じなんなんだろう。日本語って言語化されてないお決まりのフレーズってあるのかな？この言葉が来たら、そのあとにこの言葉が来るって脳が勝手に準備するのかも……？</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/09/21</div>
+      <div class="post-text">村上春樹って翻訳家とか小説家とかじゃなくて「芸術家」とか「アーティスト」って言った方が正しいのかもしれない。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/09/19</div>
+      <div class="post-text">師匠に勧められて村上春樹の華麗なるギャッツビー読んだんだけど、文章のクセが強い。読みにくい。個人的に好みじゃないかも……。このクセの強さが通用するのは村上春樹だからだと思う。一介の人間がこれやったって評価されないよ。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/09/18</div>
+      <div class="post-text">もう、いっそのこと師匠の言うこと全部無視して自分の良いと思うことを思いっきりやったほうが逆に良いのかもしれない。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/09/17</div>
+      <div class="post-text">英文そのままで訳してって言われたから師匠に辞書の言葉まんまで翻訳して提出したら逆に雑だって言われた……さじ加減が難しい。どうすればいいんだ……。文系ってやっぱり、答えがないから難しいよね。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/08/30</div>
+      <div class="post-text">私がしなきゃいけないのは翻訳文を分かりやすくすることでも読みやすくすることでもなくて英語文のまま訳すことだ。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/07/08</div>
+      <div class="post-text">コラムの翻訳が劇的にできない。物語がほしい。でも、翻訳家になるならコラムは避けて通れない。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/07/01</div>
+      <div class="post-text">「beacon」は高台地って訳せるけど灯台とか航路標識の可能性もあって、それはちゃんと検索して写真を見て確認しないと分からない。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/06/25</div>
+      <div class="post-text">The Two Moonsの中に入ってるInherit the Starsを読みたいんだけど、洋書がプレミア価格でデジタルでしか買えない……。１万くらいする。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/06/25</div>
+      <div class="post-text">師匠に、「英語はちゃんと読めてるんだけど（先生のニュアンス的に「英語では上手く想像できてる」みたいな）、ここぞってときに日本語に上手く変換できてないときがある」って言われた。それは正しい。日本語は読みやすさを追求しすぎて口語になってしまったり意訳してしまう。「読みやすさ」と「正しさ」のバランスが上手く取れてない。自覚はあるけど、それを直すのが大変なんだよね。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/06/25</div>
+      <div class="post-text">Flowers for Algernon読了。チャーリーは頭良くなって悩みがあっても、それでも頭が良いときのほうが良かったのだろうか。この小説では自閉症のときのほうが楽しそうに見える。「頭良くなりたい」って夢が夢のままのほうが幸せだったんじゃないか。知識を得るってある意味、悲しいことなんじゃないか。知らないことのほうが幸せなこともあるんじゃないか。この本を読んで考える。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/06/18</div>
+      <div class="post-text">まずはこのサイトではThe Machine Stops訳してみようかな。「AIのある現代を上手く表せてる」って話題になってたから。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/06/18</div>
+      <div class="post-text">炎のゴブレット読んでる。映画の２分が１章だった。炎のゴブレットは小説読んだ方が分かるかもしれない。映画はパート１とパート２に分けても良かったんじゃないかと思う。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/06/10</div>
+      <div class="post-text">早速「炎のゴブレット」買っちゃった。あと２章でアズカバンの囚人も終わる！</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/06/09</div>
+      <div class="post-text">ハリーポッターはアズカバンの３巻にしてやっとスラスラ読めてくるようになった。映画と同じタイミングで読んでるから内容も入ってきやすい。ハリーポッターにでてくる単語ってちょっとだけ難しい。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/06/04</div>
+      <div class="post-text">洋書読むスピードを上げたい。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/05/30</div>
+      <div class="post-text">もし、洋書初心者の人に勧めるとしたら、断然ロマンス（恋愛）小説だな～。読みやすいし、程よく流行語が入ってるし。ロマンス小説を書いてる作家さんって文章が単純で綺麗だから、そういう読みやすい文章設計ができるのも国語の才能だなと思う。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/05/25</div>
+      <div class="post-text">ハリーポッター読んでるんだけど、１巻読んだときは英単語が難しくて読むのが辛かったんだけど、慣れてくるとするする読める。</div>
+    </div>
+
+    <div class="post">
+      <div class="post-date">2026/05/22</div>
+      <div class="post-text">Fourth Wing の続編 Iron Flame、予想してたよりは面白かった。すごく批判されてたから不安だったけど。ただ、まあ、批判されてるところはなんとなく読んで分かった。「あぁ、このことね」ってなった。</div>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  © The Translator's Grimoire &nbsp;|&nbsp;
+  <a href="translation.html">Ranking</a> &nbsp;|&nbsp;
+  <a href="blog.html">Journal</a> &nbsp;|&nbsp;
+  <a href="gallery.html">Gallery</a> &nbsp;|&nbsp;
+  <a href="about.html">About</a>
+</footer>
 
 </body>
 </html>
