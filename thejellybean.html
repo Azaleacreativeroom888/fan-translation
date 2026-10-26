@@ -4,103 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>作品タイトル | The Translator's Grimoire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <svg class="map-corner tl" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
-    <path d="M2 2 L40 2 L2 40 Z" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
-    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-  </svg>
-  <svg class="map-corner tr" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
-    <path d="M2 2 L40 2 L2 40 Z" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
-    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-  </svg>
-  <svg class="map-corner bl" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
-    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
-    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-  </svg>
-  <svg class="map-corner br" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
-    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
-    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-  </svg>
+<header>
+  <a class="logo" href="index.html">📜 The Translator's Grimoire <span class="logo-sub">翻訳学習サイト</span></a>
+  <nav><ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="translation.html">Ranking</a></li>
+    <li><a href="blog.html">Journal</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul></nav>
+</header>
 
-  <header>
-    <p class="site-title">The Translator's Grimoire</p>
-    <p class="site-subtitle">〜 翻訳者の魔法書 〜</p>
-    <div class="header-rule">✦ ✦ ✦</div>
-  </header>
+<main>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="translation.html">Translation Log</a>
-    <a href="blog.html">Journal</a>
-    <a href="gallery.html" class="active">Gallery</a>
-    <a href="about.html">About</a>
-  </nav>
+  <a href="gallery.html" class="back-link">← Gallery に戻る</a>
 
-  <main>
-
-    <!-- 戻るリンク -->
-    <p style="margin-bottom:2rem;">
-      <a href="gallery.html" style="font-size:0.8rem; color:var(--gold); opacity:0.7; text-decoration:none; letter-spacing:0.1em; font-family:'Cinzel Decorative',serif;">
-        ← Gallery に戻る
-      </a>
-    </p>
-
-    <h1 class="page-heading">作品タイトル</h1>
-    <p style="text-align:center; font-style:italic; color:var(--parchment-2); font-size:0.88rem; margin-bottom:0.3rem;">F. Scott Fitzgerald, 1925</p>
-    <p style="text-align:center; font-size:0.78rem; color:var(--gold); opacity:0.6; margin-bottom:2.5rem;">― 訳：あなたの名前</p>
-
-    <!-- 翻訳本文 -->
-    <div class="passage" style="max-width:720px; margin:0 auto 1.5rem;">
-      <p class="passage-header">Chapter I</p>
-      <p style="color:var(--parchment); font-size:0.95rem; line-height:2.2;">
-        <!-- ここに翻訳全文を貼り付けます。<br><br> -->
-        <!-- 段落の区切りは &lt;br&gt;&lt;br&gt; で、または &lt;p&gt; タグで分けてください。 -->
-        <!-- 長い作品は chapter ごとに &lt;div class="passage"&gt; ブロックを追加していけばOKです。 -->
-        ジム・ポウェルはジェリービーン（ニート状態の怠け者の若者）だ。彼を恐れ多いキャラにしたいのと同じくらい君を騙すのが後ろめたくなる。
-        彼は体の99.75%も骨髄から生粋なジェリービーンでできていて、南北を分ける線の下で（毎年行われている）ジェリービーンの季節に面倒くさそうに育った。<br><br>
-        メンフィス出身の男をジェリービーンと呼んだ日には、そっとロープをポケットから取り出しそこら辺にある簡単な電柱に首から吊るされるだろう。
-        ニューオーリーンズ出身の男をジェリービーンと呼んだ日には、ニヤッと笑ったあとに女の子をマルディグラに誘うだろう。
-        主人公によってある特定のジェリービーンの畑は二つの歴史を作り出した－－４万年も寝て過ごしていた西ジョージア州にある４万年の歴史のある都市は
-        まだうとうととしながら少しずつ目覚め始めていてどこかで始まった戦争のことをぶつぶつと文句を言っているのだが、誰もそのことについて覚えていない。<br><br>
-        ジムはジェリービーンだって、また再度言うのは耳心地いいだからだ－－まるでおとぎ話の冒頭のように－－もしもジムが優しければな。
-        ジムというやつを思い浮かべるときははなぜかは丸くて美味しそうな顔で、様々な植物や様々な野菜が帽子から生えているだろう。
-        しかしジムは瘦せ型で、ビリヤード台に屈みすぎたせいで腰が曲がっていて、人を見る目のない北部ならば『街角のぶらつき者』と評されていたかもしれない。
-        </p>
+  <div class="page-hero">
+    <div class="page-title">作品タイトル</div>
+    <div class="page-subtitle" style="font-style:italic;">F. Scott Fitzgerald, 1925 &nbsp;/&nbsp; 訳：あなたの名前</div>
+    <div class="hero-divider">
+      <div class="hero-divider-line"></div>
+      <span class="hero-divider-icon">✦ ✦ ✦</span>
+      <div class="hero-divider-line"></div>
     </div>
+  </div>
 
-    <div class="passage" style="max-width:720px; margin:0 auto 1.5rem;">
-      <p class="passage-header">Chapter II</p>
-      <p style="color:var(--parchment); font-size:0.95rem; line-height:2.2;">
-        <!-- 第2章の翻訳テキストがここに入ります。 -->
-      </p>
-    </div>
-
-    <div class="ornament">· · ✦ · ·</div>
-
-    <p style="text-align:center; margin-top:2rem;">
-      <a href="gallery.html" style="font-size:0.8rem; color:var(--gold); opacity:0.7; text-decoration:none; letter-spacing:0.1em; font-family:'Cinzel Decorative',serif;">
-        ← Gallery に戻る
-      </a>
+  <div class="work-body">
+    <p class="work-chapter">Chapter I</p>
+    <p class="work-text">
+      ジム・ポウェルはジェリービーン（ニート状態の怠け者の若者）だ。彼を恐れ多いキャラにしたいのと同じくらい君を騙すのが後ろめたくなる。彼は体の99.75%も骨髄から生粋なジェリービーンでできていて、南北を分ける線の下で（毎年行われている）ジェリービーンの季節に面倒くさそうに育った。<br><br>
+      メンフィス出身の男をジェリービーンと呼んだ日には、そっとロープをポケットから取り出しそこら辺にある簡単な電柱に首から吊るされるだろう。ニューオーリーンズ出身の男をジェリービーンと呼んだ日には、ニヤッと笑ったあとに女の子をマルディグラに誘うだろう。主人公によってある特定のジェリービーンの畑は二つの歴史を作り出した――４万年も寝て過ごしていた西ジョージア州にある４万年の歴史のある都市はまだうとうととしながら少しずつ目覚め始めていてどこかで始まった戦争のことをぶつぶつと文句を言っているのだが、誰もそのことについて覚えていない。<br><br>
+      ジムはジェリービーンだって、また再度言うのは耳心地いいだからだ――まるでおとぎ話の冒頭のように――もしもジムが優しければな。ジムというやつを思い浮かべるときははなぜかは丸くて美味しそうな顔で、様々な植物や様々な野菜が帽子から生えているだろう。しかしジムは瘦せ型で、ビリヤード台に屈みすぎたせいで腰が曲がっていて、人を見る目のない北部ならば『街角のぶらつき者』と評されていたかもしれない。
     </p>
+  </div>
 
-  </main>
+  <div class="work-body">
+    <p class="work-chapter">Chapter II</p>
+    <p class="work-text">
+      第2章の翻訳テキストがここに入ります。
+    </p>
+  </div>
 
-  <footer>
-    &copy; 2025 The Translator's Grimoire &nbsp;✦&nbsp; All rights reserved
-  </footer>
+  <a href="gallery.html" class="back-link" style="margin-top:1rem; display:inline-flex;">← Gallery に戻る</a>
+
+</main>
+
+<footer>
+  © The Translator's Grimoire &nbsp;|&nbsp;
+  <a href="translation.html">Ranking</a> &nbsp;|&nbsp;
+  <a href="blog.html">Journal</a> &nbsp;|&nbsp;
+  <a href="gallery.html">Gallery</a> &nbsp;|&nbsp;
+  <a href="about.html">About</a>
+</footer>
 
 </body>
 </html>
