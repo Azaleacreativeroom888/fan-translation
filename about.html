@@ -4,125 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | The Translator's Grimoire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <svg class="map-corner tl" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
-    <path d="M2 2 L40 2 L2 40 Z" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
-    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-  </svg>
-  <svg class="map-corner tr" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
-    <path d="M2 2 L40 2 L2 40 Z" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
-    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-  </svg>
-  <svg class="map-corner bl" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
-    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
-    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-  </svg>
-  <svg class="map-corner br" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 2 L78 2 L2 78 Z" stroke="#C8A96E" stroke-width="1" fill="none"/>
-    <circle cx="2" cy="2" r="3" fill="#C8A96E"/>
-    <path d="M10 2 Q20 10 30 5 Q40 0 50 8 Q60 16 70 12" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-    <path d="M2 15 Q10 22 8 32 Q6 42 14 48" stroke="#C8A96E" stroke-width="0.5" fill="none"/>
-  </svg>
+<header>
+  <a class="logo" href="index.html">📜 The Translator's Grimoire <span class="logo-sub">翻訳学習サイト</span></a>
+  <nav><ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="translation.html">Ranking</a></li>
+    <li><a href="blog.html">Journal</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+  </ul></nav>
+</header>
 
-  <header>
-    <p class="site-title">The Translator's Grimoire</p>
-    <p class="site-subtitle">〜 翻訳者の魔法書 〜</p>
-    <div class="header-rule">✦ ✦ ✦</div>
-  </header>
+<main>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="translation.html">Translation Log</a>
-    <a href="blog.html">Journal</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="about.html" class="active">About</a>
-  </nav>
-
-  <main>
-    <h1 class="page-heading">About</h1>
-    <p class="page-divider">✦ ✦ ✦</p>
-
-    <!-- 自己紹介 -->
-    <div class="panel">
-      <p class="panel-title">🗝 このサイトについて</p>
-      <p class="about-intro">
-        ここに自己紹介や、このサイトの目的を書いてください。<br>
-        どんな作品を翻訳しているか、翻訳を学んでいる背景、このサイトを作った理由など
-        自由に記載してください。
-      </p>
+  <div class="page-hero">
+    <div class="page-title">About</div>
+    <div class="page-subtitle">このサイトについて</div>
+    <div class="hero-divider">
+      <div class="hero-divider-line"></div>
+      <span class="hero-divider-icon">✦ ✦ ✦</span>
+      <div class="hero-divider-line"></div>
     </div>
+  </div>
 
-    <!-- 外部リンク -->
-    <div class="panel">
-      <p class="panel-title">✦ Links</p>
-      <div class="links-grid">
-        <a href="#" class="link-card" target="_blank" rel="noopener">
-          <span class="link-icon">🌐</span>
-          メインサイト
-        </a>
-        <a href="#" class="link-card" target="_blank" rel="noopener">
-          <span class="link-icon">🎨</span>
-          Pixiv
-        </a>
-        <a href="#" class="link-card" target="_blank" rel="noopener">
-          <span class="link-icon">📘</span>
-          Kakuyomu
-        </a>
-        <a href="#" class="link-card" target="_blank" rel="noopener">
-          <span class="link-icon">🦋</span>
-          Bluesky
-        </a>
-        <a href="#" class="link-card" target="_blank" rel="noopener">
-          <span class="link-icon">▶️</span>
-          YouTube
-        </a>
-        <a href="#" class="link-card" target="_blank" rel="noopener">
-          <span class="link-icon">📓</span>
-          Blog (FC2)
-        </a>
+  <div class="card">
+    <h2>🗝 プロフィール</h2>
+    <p>ここに自己紹介や、このサイトの目的を書いてください。</p>
+    <p>どんな作品を翻訳しているか、翻訳を学んでいる背景、このサイトを作った理由など自由に記載してください。</p>
+  </div>
+
+  <div class="card">
+    <h2>✦ Links</h2>
+    <div class="links-grid">
+      <a href="#" class="link-card" target="_blank" rel="noopener">
+        <span class="link-icon">🌐</span>メインサイト
+      </a>
+      <a href="#" class="link-card" target="_blank" rel="noopener">
+        <span class="link-icon">🎨</span>Pixiv
+      </a>
+      <a href="#" class="link-card" target="_blank" rel="noopener">
+        <span class="link-icon">📘</span>Kakuyomu
+      </a>
+      <a href="#" class="link-card" target="_blank" rel="noopener">
+        <span class="link-icon">🦋</span>Bluesky
+      </a>
+      <a href="#" class="link-card" target="_blank" rel="noopener">
+        <span class="link-icon">▶️</span>YouTube
+      </a>
+      <a href="#" class="link-card" target="_blank" rel="noopener">
+        <span class="link-icon">📓</span>Blog
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📬 Contact</h2>
+    <form action="https://formspree.io/f/maqvpvoz" method="POST">
+      <div class="form-field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="お名前">
       </div>
-    </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="メールアドレス">
+      </div>
+      <div class="form-field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="メッセージ"></textarea>
+      </div>
+      <button type="submit" class="form-submit">✦ Send Message</button>
+    </form>
+  </div>
 
-    <!-- Contact -->
-    <div class="panel">
-      <p class="panel-title">📬 Contact</p>
-      <form
-        class="contact-form"
-        action="https://formspree.io/f/maqvpvoz"
-        method="POST"
-      >
-        <div class="form-field">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required placeholder="お名前">
-        </div>
-        <div class="form-field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="メールアドレス">
-        </div>
-        <div class="form-field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required placeholder="メッセージ"></textarea>
-        </div>
-        <button type="submit" class="form-submit">✦ Send Message</button>
-      </form>
-    </div>
+</main>
 
-  </main>
-
-  <footer>
-    &copy; 2025 The Translator's Grimoire &nbsp;✦&nbsp; All rights reserved
-  </footer>
+<footer>
+  © The Translator's Grimoire &nbsp;|&nbsp;
+  <a href="translation.html">Ranking</a> &nbsp;|&nbsp;
+  <a href="blog.html">Journal</a> &nbsp;|&nbsp;
+  <a href="gallery.html">Gallery</a> &nbsp;|&nbsp;
+  <a href="about.html">About</a>
+</footer>
 
 </body>
 </html>
